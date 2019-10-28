@@ -1,13 +1,13 @@
 # Dockerfile to build aria2 Windows binary using ubuntu mingw-w64
 # cross compiler chain.
 #
-# $ sudo docker build -t aria2gld-mingw - < Dockerfile.mingw
+# $ sudo docker build -t aria2g-mingw - < Dockerfile.mingw
 #
 # After successful build, windows binary is located at
 # /aria2/src/aria2c.exe.  You can copy the binary using following
 # commands:
 #
-# $ id=$(sudo docker create aria2gld-mingw)
+# $ id=$(sudo docker create aria2g-mingw)
 # $ sudo docker cp $id:/aria2/src/aria2c.exe <dest>
 # $ sudo docker rm -v $id
 
@@ -107,7 +107,8 @@ RUN tar xf libssh2-1.8.0.tar.gz && \
         --with-wincng \
         LIBS="-lws2_32" && \
     make install
-ADD https://api.github.com/repos/Rean1030/aria2GLD/git/refs/heads/master version.json
-RUN git clone https://github.com/Rean1030/aria2GLD && \
-    cd aria2GLD && autoreconf -i && ./mingw-config && make && \
+
+ADD https://api.github.com/repos/Rean1030/aria2g/git/refs/heads/master version.json
+RUN git clone https://github.com/Rean1030/aria2g && \
+    cd aria2g && autoreconf -i && ./mingw-config && make && \
     $HOST-strip src/aria2c.exe

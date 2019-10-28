@@ -108,7 +108,7 @@ RUN tar xf libssh2-1.8.0.tar.gz && \
         LIBS="-lws2_32" && \
     make install
 
-ADD /aria2GLD/.git/refs/heads/master version.json
-COPY /aria2GLD/ /aria2GLD/
-RUN cd aria2GLD && autoreconf -i && ./mingw-config && make && \
-    $HOST-strip src/aria2GLD.dll
+ADD /.git/refs/heads/master version.json
+COPY /aria2/ /aria2/
+RUN cd aria2 && autoreconf -i && ./mingw-config && make && \
+    $HOST-strip src/aria2g.dll
