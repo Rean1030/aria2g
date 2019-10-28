@@ -21,8 +21,10 @@ ENV HOST i686-w64-mingw32
 # It would be better to use nearest ubuntu archive mirror for faster
 # downloads.
 # RUN sed -ie 's/archive\.ubuntu/jp.archive.ubuntu/g' /etc/apt/sources.list
+### 使用阿里云ubuntu源 ###
+RUN sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list
 ### 使用中科大ubuntu源 ###
-RUN sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
+# RUN sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
 
 RUN apt-get update && \
     apt-get install -y \
