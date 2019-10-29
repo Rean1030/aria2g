@@ -110,5 +110,5 @@ RUN tar xf libssh2-1.8.0.tar.gz && \
 
 ADD https://api.github.com/repos/Rean1030/aria2g/git/refs/heads/master version.json
 RUN git clone https://github.com/Rean1030/aria2g && \
-    cd aria2g && autoreconf -i && ./mingw-config && make && \
+    cd aria2g/aria2 && autoreconf -i && ./mingw-config && make && \
     $HOST-strip src/aria2c.exe
