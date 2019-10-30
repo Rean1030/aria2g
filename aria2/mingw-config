@@ -61,9 +61,6 @@ test -z "$PREFIX" && PREFIX=/usr/local/$HOST
 ./configure \
     --host=$HOST \
     --prefix=$PREFIX \
-    --disable-shared \
-    --enable-static \
-    --enable-libaria2 \
     --without-included-gettext \
     --disable-nls \
     --with-libcares \
