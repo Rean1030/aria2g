@@ -343,8 +343,8 @@ endif # HAVE_WINTLS
 
 if USE_INTERNAL_BIGNUM
 SRCS += \
-	bignum.h\
-	InternalDHKeyExchange.cc InternalDHKeyExchange.h
+	bignum.h 
+#	InternalDHKeyExchange.cc InternalDHKeyExchange.h
 endif
 
 if USE_INTERNAL_ARC4

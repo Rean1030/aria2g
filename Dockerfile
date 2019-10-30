@@ -113,10 +113,6 @@ RUN tar xf libssh2-1.8.0.tar.gz && \
 ADD .git/refs/heads/master version.json
 COPY aria2 ./aria2
 RUN cd aria2 && autoreconf -i && \
-    ./mingw-config \
-    --disable-shared \
-    --enable-static \
-    --enable-libaria2 && \
-    make && \
+    ./mingw-config && make && \
     $HOST-strip src/aria2c.exe && \
     $HOST-strip src/.libs/libaria2.a
