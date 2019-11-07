@@ -66,17 +66,19 @@ test -z "$PREFIX" && PREFIX=/usr/local/$HOST
     --enable-libaria2 \
     --disable-bittorrent \
     --disable-metalink \
+    --disable-websocket \
+    --without-appletls \
     --without-included-gettext \
     --disable-nls \
     --with-libcares \
     --without-gnutls \
     --without-openssl \
-    --with-sqlite3 \
+    --without-sqlite3 \
     --without-libxml2 \
-    --with-libexpat \
+    --without-libexpat \
     --with-libz \
     --without-libgmp \
-    --with-libssh2 \
+    --without-libssh2 \
     --without-libgcrypt \
     --without-libnettle \
     --with-cppunit-prefix=$PREFIX \
